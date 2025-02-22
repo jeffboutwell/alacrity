@@ -22,7 +22,28 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+h1 {
+  @apply font-bold text-4xl;
+}
+
+.Content--center {
+  @apply grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20;
+}
 
 .Hero {
+  @apply bg-cover bg-no-repeat bg-center space-y-8;
   background-image: url("../../public/images/hero.jpg");
+}
+
+.Button {
+  @apply bg-slate-500 px-6 py-2 rounded inline-block uppercase transition-all;
+}
+.Button--primary {
+  background-color: var(--alacrity-red);
+}
+.Button--secondary {
+  @apply bg-white text-gray-800;
+  &:hover {
+    @apply bg-slate-200;
+  }
 }
