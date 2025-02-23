@@ -31,7 +31,7 @@ const Intro = () => {
             width="500"
             height="500"
             alt="bird"
-            className="opacity-25"
+            className="opacity-25 dark:opacity-80"
           />
         </div>
       </div>
