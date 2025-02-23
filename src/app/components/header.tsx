@@ -10,6 +10,7 @@ const Header = () => {
         width={logo.width}
         height={logo.height}
         alt="Alacrity logo"
+        className="max-w-[35%]"
       />
     </header>
   );

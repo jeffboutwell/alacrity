@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="Hero w-full py-60 text-white text-center">
+    <div className="Hero w-full py-52 text-white text-center">
       <h1 className="mx-8 w-auto lg:mx-auto lg:max-w-[40%]">
         Where your expertise meets a <em>mission that matters</em>
       </h1>

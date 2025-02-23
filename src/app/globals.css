@@ -25,25 +25,126 @@ body {
 h1 {
   @apply font-bold text-4xl;
 }
+h2 {
+  @apply font-bold text-3xl mb-6;
+}
+h3 {
+  @apply font-semibold text-xl mb-4;
+}
 
-.Content--center {
-  @apply grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20;
+.Content--outer {
+  @apply w-full py-20;
+}
+.Content--inner {
+  @apply px-8 sm:px-20 max-w-screen-lg mx-auto;
 }
 
 .Hero {
-  @apply bg-cover bg-no-repeat bg-center space-y-8;
+  @apply bg-cover bg-no-repeat bg-top space-y-8;
   background-image: url("../../public/images/hero.jpg");
 }
 
+.Intro {
+  background-color: var(--alacrity-light-grey);
+}
+
+.WhyWork__item {
+  @apply text-center;
+}
+
+.WhyWork__item img {
+  @apply mb-6;
+}
+.WhyWork__item p {
+  @apply text-sm;
+}
+
+.PurposeMission {
+  @apply text-white bg-left bg-no-repeat bg-blend-overlay md:py-10;
+  background-image: url("../../public/images/flag.svg");
+  background-color: var(--alacrity-blue);
+}
+.PurposeMission__item {
+  @apply py-12 md:grid grid-cols-12 md:divide-x-2 md:py-0 items-center;
+}
+.PurposeMission__item h2 {
+  @apply md:text-right col-span-4 md:m-0 md:pr-16;
+}
+.PurposeMission__item p {
+  @apply md:text-left col-span-8 md:py-6 md:pl-16;
+}
+
+.Values {
+  @apply text-center;
+}
+.Values__itemList {
+  @apply grid sm:grid-cols-2 md:grid-cols-3 gap-14;
+}
+.Values__item img {
+  @apply mx-auto mb-4;
+}
+.Values__item h3 {
+  @apply uppercase text-lg;
+  color: var(--alacrity-red);
+}
+.Values__item p {
+  @apply text-sm;
+}
+.Values__item-photo {
+  @apply md:col-start-1 md:row-start-2 aspect-square bg-cover;
+  background-image: url("../../public/images/boots-square.jpg");
+}
+
+.Difference {
+  @apply bg-cover bg-no-repeat bg-center text-white text-center;
+  background-image: url("../../public/images/salute.jpg");
+}
+
+.Footer {
+  @apply grid grid-cols-1 gap-y-16 py-8 justify-between;
+  background-color: var(--alacrity-light-grey);
+  ul {
+    @apply flex flex-row justify-end;
+  }
+}
+.Footer__top,
+.Footer__bottom {
+  @apply grid;
+}
+.Footer__top {
+  @apply grid-cols-2;
+}
+.Footer__bottom {
+  @apply grid-cols-1 md:grid-cols-2 gap-y-4 text-sm text-gray-400;
+}
+.Footer__social a {
+  @apply bg-black block rounded-full text-gray-500 w-8 h-8 text-center transition-all leading-8;
+  &:hover {
+    @apply bg-gray-700;
+  }
+}
+.Footer__nav a {
+  @apply transition-all;
+  &:hover {
+    @apply text-gray-600;
+  }
+}
 .Button {
-  @apply bg-slate-500 px-6 py-2 rounded inline-block uppercase transition-all;
+  @apply px-6 py-2 rounded inline-block uppercase transition-all font-semibold align-middle;
+  &:hover {
+    @apply brightness-90;
+  }
 }
 .Button--primary {
+  @apply text-white;
   background-color: var(--alacrity-red);
 }
 .Button--secondary {
   @apply bg-white text-gray-800;
+}
+.Button--tertiary {
+  @apply text-white border-white border-2;
   &:hover {
-    @apply bg-slate-200;
+    @apply bg-black bg-opacity-20;
   }
 }
