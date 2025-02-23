@@ -49,7 +49,7 @@ const Contact = () => {
                 <p className="error">{errors.subject.message}</p>
               )}
             </fieldset>
-            <fieldset className="md:col-span-full">
+            <fieldset className="col-span-6 md:col-span-full">
               <label>Comments </label>
               <textarea {...register("comment")} placeholder="Comments" />
               {errors.comment && (
