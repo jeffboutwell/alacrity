@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Hero />
       <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        <main className="flex flex-col row-start-2 items-center sm:items-start">
           <Intro />
           <WhyWork />
           <Purpose />

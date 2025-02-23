@@ -85,8 +85,8 @@ h3 {
   @apply mx-auto mb-4;
 }
 .Values__item h3 {
-  @apply uppercase text-lg;
   color: var(--alacrity-red);
+  @apply uppercase text-lg dark:text-white;
 }
 .Values__item p {
   @apply text-sm;
@@ -99,6 +99,35 @@ h3 {
 .Difference {
   @apply bg-cover bg-no-repeat bg-center text-white text-center;
   background-image: url("../../public/images/salute.jpg");
+}
+
+.Contact {
+  @apply bg-cover bg-center bg-no-repeat text-center;
+  background-image: url("../../public/images/woman-soldier-smiling.jpg");
+}
+
+.ContactForm {
+  @apply mx-12 border-2 bg-white p-12 shadow-md;
+}
+.ContactForm--inner {
+  @apply grid md:grid-cols-12 gap-8 mb-8;
+}
+.ContactForm fieldset {
+  @apply border-b-2;
+}
+.ContactForm label {
+  @apply hidden;
+}
+.ContactForm textarea,
+.ContactForm input {
+  @apply w-full py-2 text-gray-800;
+}
+.ContactForm input {
+  @apply border-none border-b-2 border-gray-500;
+}
+.ContactForm .error {
+  @apply text-left text-xs italic;
+  color: var(--alacrity-red);
 }
 
 .Footer {
@@ -121,7 +150,7 @@ h3 {
 .Footer__social a {
   @apply bg-black block rounded-full text-gray-500 w-8 h-8 text-center transition-all leading-8;
   &:hover {
-    @apply bg-gray-700;
+    @apply bg-gray-600;
   }
 }
 .Footer__nav a {
@@ -131,7 +160,7 @@ h3 {
   }
 }
 .Button {
-  @apply px-6 py-2 rounded inline-block uppercase transition-all font-semibold align-middle;
+  @apply px-6 py-2 rounded inline-block uppercase transition-all font-semibold align-middle bg-white border-2 text-gray-800;
   &:hover {
     @apply brightness-90;
   }
@@ -144,7 +173,7 @@ h3 {
   @apply bg-white text-gray-800;
 }
 .Button--tertiary {
-  @apply text-white border-white border-2;
+  @apply text-white border-white border-2 bg-transparent;
   &:hover {
     @apply bg-black bg-opacity-20;
   }
