@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 
 import { ContactForm } from "../utils/schema";
+import { send } from "../utils/sendEmail";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -16,10 +17,15 @@ const Contact = () => {
     resolver: zodResolver(ContactForm),
   });
   const [submitted, setSubmitted] = useState<boolean>(false);
-  const onSubmit = (data: ContactForm) => {
-    console.log(data);
-    reset();
-    setSubmitted(true);
+  const onSubmit = (formData: ContactForm) => {
+    console.log(formData);
+    try {
+      send({ formData });
+      reset();
+      setSubmitted(true);
+    } catch (e) {
+      console.error(e);
+    }
   };
   return (
     <div className="Contact Content--outer">
