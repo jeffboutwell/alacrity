@@ -10,7 +10,7 @@ const Values = () => {
   return (
     <div className="Values Content--outer">
       <div className="Content--inner">
-        <h2>Our Values</h2>
+        <h2 className="mb-16">Our Values</h2>
         <div className="Values__itemList">
           <div className="Values__item">
             <Image
