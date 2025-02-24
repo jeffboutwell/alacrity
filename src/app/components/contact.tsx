@@ -3,7 +3,10 @@
 import React, { useState } from "react";
 
 import { ContactForm } from "../utils/schema";
+import { phoneMaskOptions } from "../utils/masks";
 import { useForm } from "react-hook-form";
+import { useMaskito } from "@maskito/react";
+import { withMaskitoRegister } from "../utils/with-maskito-register";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const Contact = () => {
@@ -17,6 +20,8 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [emailSendError, SetEmailSendError] = useState<boolean>(false);
+  const phoneInputRef = useMaskito({ options: phoneMaskOptions });
+
   const onSubmit = async (formData: ContactForm) => {
     const response = await fetch("/api/send", {
       method: "POST",
@@ -51,19 +56,23 @@ const Contact = () => {
               {errors.email && <p className="error">{errors.email.message}</p>}
             </fieldset>
             <fieldset className="col-span-6">
-              <label>Phone </label>
-              <input {...register("phone")} placeholder="Phone" />
+              <label>Phone</label>
+              <input
+                type="tel"
+                placeholder="Phone"
+                {...withMaskitoRegister(register("phone"), phoneInputRef)}
+              />
               {errors.phone && <p className="error">{errors.phone.message}</p>}
             </fieldset>
             <fieldset className="col-span-6">
-              <label>Subject </label>
+              <label>Subject</label>
               <input {...register("subject")} placeholder="Subject" />
               {errors.subject && (
                 <p className="error">{errors.subject.message}</p>
               )}
             </fieldset>
             <fieldset className="col-span-6 md:col-span-full">
-              <label>Comments </label>
+              <label>Comments</label>
               <textarea {...register("comment")} placeholder="Comments" />
               {errors.comment && (
                 <p className="error">{errors.comment.message}</p>
