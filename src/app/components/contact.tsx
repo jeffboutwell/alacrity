@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 
 import { ContactForm } from "../utils/schema";
-import { send } from "../utils/sendEmail";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -17,14 +16,22 @@ const Contact = () => {
     resolver: zodResolver(ContactForm),
   });
   const [submitted, setSubmitted] = useState<boolean>(false);
-  const onSubmit = (formData: ContactForm) => {
-    console.log(formData);
-    try {
-      send({ formData });
-      reset();
+  const [emailSendError, SetEmailSendError] = useState<boolean>(false);
+  const onSubmit = async (formData: ContactForm) => {
+    const response = await fetch("/api/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+    if (response.ok) {
+      await response.json();
       setSubmitted(true);
-    } catch (e) {
-      console.error(e);
+      reset();
+    } else {
+      console.error("API error:", response.status);
+      SetEmailSendError(true);
     }
   };
   return (
@@ -63,11 +70,15 @@ const Contact = () => {
               )}
             </fieldset>
           </div>
-          {!submitted ? (
-            <button className="Button">Send Message</button>
-          ) : (
+          {!submitted && <button className="Button">Send Message</button>}
+          {submitted && !emailSendError && (
             <p className="text-gray-800 text-lg">
               Thank you for contacting us! We&#8217;ll been in touch.
+            </p>
+          )}
+          {submitted && emailSendError && (
+            <p className="text-red-800 text-lg">
+              Something went wrong. The email couldn&#8217;t be sent.
             </p>
           )}
         </form>
