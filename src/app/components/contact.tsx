@@ -35,7 +35,7 @@ const Contact = () => {
     }
   };
   return (
-    <div className="Contact Content--outer">
+    <div className="Contact Content--outer" id="form">
       <div className="Content--inner">
         <h2 className="text-gray-800">Contact Us</h2>
         <form className="ContactForm" onSubmit={handleSubmit(onSubmit)}>
