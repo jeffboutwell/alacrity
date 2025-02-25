@@ -23,8 +23,7 @@ export async function POST(request: NextRequest) {
     const body: ContactForm = await request.json();
     const { data, error } = await resend.emails.send({
       from: "Alacrity <onboarding@resend.dev>",
-      //to: ["jsuggs@docs.health", "tim@godigitalculture.com"],
-      to: ["jeffboutwell@gmail.com"],
+      to: ["jsuggs@docs.health", "tim@godigitalculture.com"],
       subject: "Alacrity Contact Form",
       react: EmailTemplate(body) as React.ReactElement,
     });
