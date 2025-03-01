@@ -61,8 +61,7 @@ h3 {
 }
 
 .PurposeMission {
-  @apply text-white bg-left bg-no-repeat bg-blend-overlay md:py-10;
-  background-image: url("../../public/images/flag.svg");
+  @apply text-white md:py-10;
   background-color: var(--alacrity-blue);
 }
 .PurposeMission__item {
