@@ -2,13 +2,13 @@ import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import Footer from "./components/footer";
-import { Geist } from "next/font/google";
 import Header from "./components/header";
 import type { Metadata } from "next";
+import { Open_Sans } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
 });
 
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} antialiased`}>
+      <body className={`${openSans.className} antialiased`}>
         <Header />
         {children}
         <Footer />
