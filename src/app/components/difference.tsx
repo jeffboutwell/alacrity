@@ -5,7 +5,7 @@ const Difference = () => {
   return (
     <div className="Difference Content--outer">
       <div className="Content--inner grid md:grid-cols-12">
-        <h2 className="md:col-span-8">Ready to Make a Difference?</h2>
+        <h2 className="md:col-span-8 my-0">Ready to Make a Difference?</h2>
         <div className="md:col-span-4">
           <Link href={"#form"} className="Button Button--tertiary mx-auto">
             Contact Us
