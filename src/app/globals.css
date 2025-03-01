@@ -77,23 +77,35 @@ h3 {
 
 .Values {
   @apply text-center;
+  .Content--inner {
+    @apply grid md:grid-cols-2 gap-14;
+  }
 }
 .Values__itemList {
-  @apply grid sm:grid-cols-2 md:grid-cols-3 gap-14;
+  @apply grid grid-cols-1 gap-12;
+}
+.Values__item {
+  @apply grid grid-cols-4 md:grid-cols-1 gap-6 md:gap-0 lg:gap-6 lg:grid-cols-4 text-left;
 }
 .Values__item img {
   @apply mx-auto mb-4;
 }
 .Values__item h3 {
   color: var(--alacrity-red);
-  @apply uppercase text-lg dark:text-white;
+  @apply text-lg dark:text-white col-span-1;
 }
 .Values__item p {
-  @apply text-sm;
+  @apply text-sm col-span-3;
 }
 .Values__item-photo {
   @apply md:col-start-1 md:row-start-2 aspect-square bg-cover;
   background-image: url("../../public/images/boots-square.jpg");
+}
+.Values__photo {
+  @apply relative overflow-hidden;
+  img {
+    @apply w-full h-full object-cover;
+  }
 }
 
 .Difference {
