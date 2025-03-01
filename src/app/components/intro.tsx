@@ -21,7 +21,7 @@ const Intro = () => {
             impacton the lives of military personnel, veterans, and their
             families.
           </p>
-          <Link href={"#form"} className="Button Button--primary">
+          <Link href={"#form"} className="Button Button--primary z-10">
             Get Started
           </Link>
         </div>
