@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import bird from "../../../public/images/bird.svg";
+import doctors from "../../../public/images/doctors.jpg";
 
 const Intro = () => {
   return (
@@ -25,13 +26,13 @@ const Intro = () => {
             Get Started
           </Link>
         </div>
-        <div className="md:col-span-5">
+        <div className="md:col-span-5 aspect-square relative w-full rounded-full overflow-hidden">
           <Image
-            src={bird}
+            src={doctors}
             width="500"
             height="500"
-            alt="bird"
-            className="opacity-25 dark:opacity-80"
+            alt="doctors"
+            className="bg-cover h-full w-full object-cover"
           />
         </div>
       </div>
