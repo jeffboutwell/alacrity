@@ -80,7 +80,7 @@ h3 {
   }
 }
 .Values__itemList {
-  @apply grid grid-cols-1 gap-12;
+  @apply grid grid-cols-1 gap-12 w-10/12 mx-auto lg:mr-0;
 }
 .Values__item {
   @apply grid grid-cols-4 md:grid-cols-1 gap-6 md:gap-0 lg:gap-6 lg:grid-cols-4 text-left;

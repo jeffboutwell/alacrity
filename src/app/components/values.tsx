@@ -5,7 +5,7 @@ import soldierFlag from "../../../public/images/soldier-flag.jpg";
 const Values = () => {
   return (
     <div className="Values Content--outer">
-      <div className="Content--inner">
+      <div className="grid md:grid-cols-2 gap-12">
         <div className="Values__itemList">
           <h2>Our Values</h2>
           <div className="Values__item">
