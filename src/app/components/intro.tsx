@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import bird from "../../../public/images/bird.svg";
 import doctors from "../../../public/images/doctors.jpg";
 
 const Intro = () => {
