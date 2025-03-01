@@ -5,7 +5,10 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 const DownArrow = () => {
   return (
     <div>
-      <FontAwesomeIcon icon={faArrowDown} className="text-xl mt-12" />
+      <FontAwesomeIcon
+        icon={faArrowDown}
+        className="text-xl mt-12 animate-bounce"
+      />
     </div>
   );
 };
