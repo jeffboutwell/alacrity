@@ -90,7 +90,7 @@ h3 {
 }
 .Values__item h3 {
   color: var(--alacrity-red);
-  @apply text-lg dark:text-white col-span-1;
+  @apply text-lg dark:text-white col-span-1 font-bold;
 }
 .Values__item p {
   @apply text-sm col-span-3;
