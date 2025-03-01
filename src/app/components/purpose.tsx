@@ -2,7 +2,7 @@ import React from "react";
 
 const Purpose = () => {
   return (
-    <div className="PurposeMission Content--outer">
+    <div className="PurposeMission Content--outer py-6">
       <div className="Content--inner grid divide-y-2 gap-0 md:divide-y-0">
         <div className="PurposeMission__item">
           <h2>Our Purpose</h2>
